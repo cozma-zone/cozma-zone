@@ -186,6 +186,16 @@ if (form && message) {
 const sticky = document.querySelector('.sticky-order');
 const section = document.getElementById('order');
 
+document.querySelectorAll('a[href="#order"]:not(.sticky-order)').forEach(function (link) {
+  link.addEventListener('click', function () {
+    snapTrack('START_CHECKOUT', {
+      item_ids: [CONFIG.sku],
+      item_category: 'Beauty & Personal Care',
+      currency: CONFIG.currency
+    });
+  });
+});
+
 if (sticky && section) {
   const updateSticky = function () {
     const rect = section.getBoundingClientRect();
