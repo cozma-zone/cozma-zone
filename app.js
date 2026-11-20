@@ -37,7 +37,7 @@ function kuwaitPhone(value) {
   let phone = String(value || '')
     .replace(/[٠-٩]/g, digit => '٠١٢٣٤٥٦٧٨٩'.indexOf(digit))
     .replace(/[۰-۹]/g, digit => '۰۱۲۳۴۵۶۷۸۹'.indexOf(digit))
-    .replace(/[\\s()+-]/g, '');
+    .replace(/[\s()+-]/g, '');
 
   if (phone.startsWith('00965')) phone = phone.slice(5);
   else if (phone.startsWith('965')) phone = phone.slice(3);
